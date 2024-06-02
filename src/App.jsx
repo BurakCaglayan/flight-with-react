@@ -1,7 +1,6 @@
-
 import { Routes, Route } from "react-router-dom";
-import Home from './pages/home/Home';
-import './App.scss'
+import Home from "./pages/home/Home";
+import "./App.scss";
 import "./styles/main.scss";
 
 const App = () => {
@@ -9,10 +8,7 @@ const App = () => {
     <Routes>
       <Route path="*" element={<Home />} />
     </Routes>
-    // <>
-    //   <Home />
-    // </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
