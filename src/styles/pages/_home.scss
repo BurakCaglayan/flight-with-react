@@ -7,15 +7,17 @@
   background-color: $tarawera;
   padding: $main_page_padding;
 
-  h2 {
+  &__welcome {
+    text-align: center;
     color: $alabaster;
-    margin-bottom: 0px;
-    margin-top: 50px;
-    font-weight: 200;
+    margin: 40px 0px 20px 0px;
   }
 
-  &__desc {
-    color: $alabaster;
+  h2 {
+    margin-bottom: 0px;
+    font-weight: 200;
+  }
+  span {
     font-weight: 300;
   }
 }
