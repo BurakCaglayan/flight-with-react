@@ -1,12 +1,17 @@
+
+import { Routes, Route } from "react-router-dom";
+import Home from './pages/home/Home';
 import './App.scss'
 import "./styles/main.scss";
-import Home from './pages/home/Home';
 
 const App = () => {
   return (
-    <>
-      <Home />
-    </>
+    <Routes>
+      <Route path="*" element={<Home />} />
+    </Routes>
+    // <>
+    //   <Home />
+    // </>
   )
 }
 
