@@ -1,4 +1,5 @@
 import Header from "../../components/header/Header";
+import FlightSelect from "../../components/flightSelect/FlightSelect";
 
 const Home = () => {
   return (
@@ -6,6 +7,7 @@ const Home = () => {
       <Header />
       <h2>Merhaba</h2>
       <span className="home__desc">Nereyi keşfetmek istersiniz?</span>
+      <FlightSelect />
     </div>
   );
 };
