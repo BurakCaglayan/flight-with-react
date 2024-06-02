@@ -2,6 +2,7 @@ module.exports = {
   root: true,
   env: { browser: true, es2020: true },
   extends: [
+    "airbnb",
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
@@ -17,5 +18,15 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/react-in-jsx-scope": 0,
+    "react/function-component-definition": 0,
+    "react/prop-types": 0
   },
 }
