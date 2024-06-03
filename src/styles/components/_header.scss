@@ -2,7 +2,15 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  color: $alabaster;
-  border-bottom: 1px solid $alabaster;
   line-height: 15px;
+
+  &__light {
+    color: $alabaster;
+    border-bottom: 1px solid $alabaster;
+  }
+
+  &__dark {
+    color: $ebony_clay;
+    border-bottom: 1px solid $ebony_clay;
+  }
 }

@@ -1,6 +1,8 @@
-const Header = () => {
+import PropTypes from "prop-types";
+
+const Header = ({ className }) => {
   return (
-    <div className="header">
+    <div className={`header ${className}`}>
       <div>
         <b>turkishairlines.com</b>
       </div>
@@ -10,6 +12,10 @@ const Header = () => {
       </div>
     </div>
   );
+};
+
+Header.propTypes = {
+  className: PropTypes.string,
 };
 
 export default Header;
