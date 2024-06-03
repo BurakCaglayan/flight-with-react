@@ -11,15 +11,19 @@ const FlightSelect = () => {
   ];
   return (
     <div className="flight-select">
-      <div className="flight-select__dropdown">
-        <Dropdown labelText={"Nereden"} options={options} searchBy={"name"} />
-      </div>
-      <div className="flight-select__dropdown">
-        <Dropdown labelText={"Nereye"} options={options} searchBy={"name"} />
-      </div>
-      <div>
-        <DatePicker />
-      </div>
+      <Dropdown
+        labelText={"Nereden"}
+        options={options}
+        searchBy={"name"}
+        className={"flight-select__dropdown"}
+      />
+      <Dropdown
+        labelText={"Nereye"}
+        options={options}
+        searchBy={"name"}
+        className={"flight-select__dropdown"}
+      />
+      <DatePicker />
       <div>Count area</div>
       <div>Button</div>
     </div>
