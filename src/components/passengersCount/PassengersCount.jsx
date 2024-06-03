@@ -19,9 +19,25 @@ const PassengersCount = ({ className }) => {
     setIsTooltipVisible(true);
   };
 
+  const handleCountButtonsClick = (action) => {
+    if (action === "dec") {
+      passengersCount > 1 && setPassengersCount(passengersCount - 1);
+    } else {
+      setPassengersCount(passengersCount + 1);
+    }
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        const passangerSelections = {
+          count: passengersCount,
+          class: selectedFlightClass,
+        };
+        localStorage.setItem(
+          "passengersSelections",
+          JSON.stringify(passangerSelections)
+        );
         setIsTooltipVisible(false);
       }
     };
@@ -29,7 +45,7 @@ const PassengersCount = ({ className }) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [wrapperRef]);
+  }, [wrapperRef, passengersCount, selectedFlightClass]);
 
   return (
     <div className="passengers-count" ref={wrapperRef}>
@@ -69,17 +85,14 @@ const PassengersCount = ({ className }) => {
               <div>
                 <button
                   className="passengers-count__tooltip__footer__button"
-                  onClick={() =>
-                    passengersCount > 1 &&
-                    setPassengersCount(passengersCount - 1)
-                  }
+                  onClick={() => handleCountButtonsClick("dec")}
                 >
                   -
                 </button>
                 <span>{passengersCount}</span>
                 <button
                   className="passengers-count__tooltip__footer__button"
-                  onClick={() => setPassengersCount(passengersCount + 1)}
+                  onClick={() => handleCountButtonsClick("inc")}
                 >
                   +
                 </button>
