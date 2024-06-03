@@ -15,4 +15,13 @@
       cursor: pointer;
     }
   }
+
+  &__alert {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: $iron;
+    color: $thunderBird;
+    font-weight: $font_weight_semi_bold;
+    border-radius: 0.25rem;
+  }
 }
