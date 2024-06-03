@@ -1,3 +1,4 @@
+import FlightsList from "../../components/flightsList/FlightsList";
 import Header from "../../components/header/Header";
 
 const Flights = () => {
@@ -12,7 +13,9 @@ const Flights = () => {
           <small className="flights__promo__title">Promosyon kodu</small>
           <div>Switch button</div>
         </div>
-        <div>Uçuş seçim kartı</div>
+        <div>
+          <FlightsList />
+        </div>
       </div>
     </div>
   );
