@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Card from "../UI/Card";
-import FlightClassSelect from "./components/FlightClassSelect";
-import FlightInfo from "./components/FlightInfo";
+import Card from "../../../components/UI/Card";
+import FlightClassSelect from "./FlightClassSelect";
+import FlightInfo from "./FlightInfo";
 
 const FlightsList = () => {
   const [selectedFlightClass, setSelectedFlightClass] = useState();
