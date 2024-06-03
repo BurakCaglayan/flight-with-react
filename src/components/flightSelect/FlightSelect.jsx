@@ -10,10 +10,10 @@ const FlightSelect = () => {
   ];
   return (
     <div className="flight-select">
-      <div>
+      <div className="flight-select__dropdown">
         <Dropdown labelText={"Nereden"} options={options} searchBy={"name"} />
       </div>
-      <div>
+      <div className="flight-select__dropdown">
         <Dropdown labelText={"Nereye"} options={options} searchBy={"name"} />
       </div>
       <div>Date area</div>

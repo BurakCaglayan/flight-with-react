@@ -2,4 +2,8 @@
   display: flex;
   padding: 1rem;
   background-color: $dep_ar_bg;
+  gap: 0.5rem;
+  &__dropdown {
+    width: 9rem;
+  }
 }
