@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { searchFilter } from "../../utils/common";
 
-const Dropdown = ({ options, labelText, searchBy, className, dropRef }) => {
+const Dropdown = ({ options, labelText, searchBy, className, type }) => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [isLabelTop, setIsLabelTop] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -39,8 +39,9 @@ const Dropdown = ({ options, labelText, searchBy, className, dropRef }) => {
   };
 
   const handleClick = (item) => {
-    setSearchValue(item[searchBy].name);
+    setSearchValue(item[searchBy]);
     setSelectedItem(item);
+    localStorage.setItem(type, JSON.stringify(item));
   };
 
   return (
@@ -68,7 +69,7 @@ const Dropdown = ({ options, labelText, searchBy, className, dropRef }) => {
               searchBy,
             })?.map((item, index) => (
               <li key={index} onClick={() => handleClick(item)}>
-                {item[searchBy].name}
+                {item[searchBy]}
               </li>
             ))}
           </ul>
