@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Dropdown from "../UI/Dropdown";
 import DatePicker from "../UI/DatePicker";
 import PassengersCount from "../passengersCount/PassengersCount";
@@ -8,6 +9,7 @@ import { getFlights, getAirports } from "../../utils/common";
 
 const FlightSelect = () => {
   const [hasError, setHasError] = useState(false);
+  const navigate = useNavigate();
   const flights = getFlights();
   const options = getAirports();
 
@@ -18,6 +20,7 @@ const FlightSelect = () => {
       setHasError(true);
     } else {
       setHasError(false);
+      navigate("/flights");
     }
   };
 
