@@ -52,6 +52,7 @@ const PassengersCount = ({ className }) => {
               >
                 -
               </button>
+              <span>{passengersCount}</span>
               <button
                 className="passengers-count__tooltip__footer__button"
                 onClick={() => setPassengersCount(passengersCount + 1)}
