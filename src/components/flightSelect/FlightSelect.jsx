@@ -5,7 +5,11 @@ import DatePicker from "../UI/DatePicker";
 import PassengersCount from "../passengersCount/PassengersCount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { getFlights, getAirports } from "../../utils/common";
+import {
+  getFlights,
+  getAirports,
+  setSelectedFligtToLocalStorage,
+} from "../../utils/common";
 
 const FlightSelect = () => {
   const [hasError, setHasError] = useState(false);
@@ -20,6 +24,7 @@ const FlightSelect = () => {
       setHasError(true);
     } else {
       setHasError(false);
+      setSelectedFligtToLocalStorage();
       navigate("/flights");
     }
   };

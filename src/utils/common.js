@@ -12,3 +12,20 @@ export const searchFilter = ({ searchValue, list, searchBy = "name" }) => {
 export const getFlights = () => flightsData.flights;
 
 export const getAirports = () => airportsData.airports;
+
+export const findSelectedFlights = () => {
+  const originAirport = JSON.parse(localStorage.getItem("originAirport"));
+  const destinationAirport = JSON.parse(
+    localStorage.getItem("destinationAirport")
+  );
+  return getFlights().filter(
+    (flight) =>
+      flight.originAirport.name === originAirport.name &&
+      flight.destinationAirport.name === destinationAirport.name
+  );
+};
+
+export const setSelectedFligtToLocalStorage = () => {
+  const selectedFlights = findSelectedFlights();
+  localStorage.setItem("selectedFlights", JSON.stringify(selectedFlights));
+};
