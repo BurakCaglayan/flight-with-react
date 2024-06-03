@@ -1,5 +1,12 @@
+import Header from "../../components/header/Header";
+
 const Flights = () => {
-  return <div className="flights">Hello World</div>;
+  // console.log(JSON.parse(localStorage.getItem("selectedFlights")));
+  return (
+    <div className="flights">
+      <Header className={"header__dark"} />
+    </div>
+  );
 };
 
 export default Flights;
