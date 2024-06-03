@@ -1,0 +1,45 @@
+.passengers-count {
+  position: relative;
+
+  button {
+    height: 100%;
+    background-color: $ebony_clay;
+    color: $athens_gray;
+    font-weight: $font_weight_semi_bold;
+    padding: 0 0.75rem 0 0.75rem;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__span {
+    position: absolute;
+    color: $athens_gray;
+    font-weight: $font_weight_semi_bold;
+    top: 0.2rem;
+    right: 0.2rem;
+  }
+
+  svg {
+    font-size: 1rem;
+  }
+
+  &__tooltip {
+    color: #212121;
+    position: absolute;
+    width: 15rem;
+    max-height: 10rem;
+    overflow: hidden;
+    overflow-y: auto;
+    margin-top: 0.6rem;
+    right: -3.75rem;
+
+    &__content {
+      background-color: $athens_gray;
+      padding: 0.75rem;
+      margin: 0;
+    }
+  }
+}
