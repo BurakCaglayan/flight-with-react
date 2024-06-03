@@ -1,11 +1,12 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPerson } from "@fortawesome/free-solid-svg-icons";
+import { faPerson, faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
 import RadioButton from "../UI/RadioButton";
 
 const PassengersCount = ({ className }) => {
   const [selectedFlightClass, setSelectedFlightClass] = useState("Eco");
+  const [passengersCount, setPassengersCount] = useState(1);
 
   const onChangeRadioValue = (e) => {
     setSelectedFlightClass(e.target.value);
@@ -13,9 +14,11 @@ const PassengersCount = ({ className }) => {
 
   return (
     <div className="passengers-count">
-      <span className="passengers-count__span">1</span>
+      <span className="passengers-count__span">{passengersCount}</span>
       <button className="passengers-count__button">
-        <FontAwesomeIcon icon={faPerson} />
+        <FontAwesomeIcon
+          icon={passengersCount > 1 ? faPeopleGroup : faPerson}
+        />
       </button>
       <div className="passengers-count__tooltip">
         <div className="passengers-count__tooltip__content">
@@ -40,12 +43,22 @@ const PassengersCount = ({ className }) => {
             <div className="passengers-count__tooltip__footer__label">
               Yolcu
             </div>
-            <button className="passengers-count__tooltip__footer__button">
-              -
-            </button>
-            <button className="passengers-count__tooltip__footer__button">
-              +
-            </button>
+            <div>
+              <button
+                className="passengers-count__tooltip__footer__button"
+                onClick={() =>
+                  passengersCount > 1 && setPassengersCount(passengersCount - 1)
+                }
+              >
+                -
+              </button>
+              <button
+                className="passengers-count__tooltip__footer__button"
+                onClick={() => setPassengersCount(passengersCount + 1)}
+              >
+                +
+              </button>
+            </div>
           </div>
         </div>
       </div>
