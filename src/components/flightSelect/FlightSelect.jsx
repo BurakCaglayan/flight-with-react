@@ -1,5 +1,6 @@
 import Dropdown from "../UI/Dropdown";
 import DatePicker from "../UI/DatePicker";
+import PassengersCount from "../passengersCount/PassengersCount";
 
 const FlightSelect = () => {
   const options = [
@@ -24,7 +25,7 @@ const FlightSelect = () => {
         className={"flight-select__dropdown"}
       />
       <DatePicker />
-      <div>Count area</div>
+      <PassengersCount />
       <div>Button</div>
     </div>
   );
