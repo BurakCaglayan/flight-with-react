@@ -1,0 +1,12 @@
+.flight-class {
+  display: flex;
+  font-size: 0.75rem;
+  justify-content: space-between;
+  align-items: center;
+
+  &__info {
+    display: flex;
+    align-items: center;
+
+  }
+}
