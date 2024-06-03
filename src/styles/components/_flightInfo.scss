@@ -1,0 +1,21 @@
+.flight-info {
+  display: flex;
+  font-size: 0.75rem;
+
+  &__arr {
+    text-align: end;
+  }
+
+  &__div {
+    width: 100%;
+    align-content: center;
+  }
+
+  &__flight {
+    width: 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+  }
+}

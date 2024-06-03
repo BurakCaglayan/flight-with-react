@@ -1,9 +1,12 @@
 import PropTypes from "prop-types";
 
-const card = ({ className }) => <div className={`card ${className}`}>Card</div>;
+const card = ({ className, children }) => (
+  <div className={`card ${className}`}>{children}</div>
+);
 
 card.propTypes = {
   className: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default card;
