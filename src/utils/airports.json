@@ -1,0 +1,32 @@
+{
+  "airports": [
+    {
+      "id": 1,
+      "name": "Istanbul Airport"
+    },
+    {
+      "id": 2,
+      "name": "Antalya Airport"
+    },
+    {
+      "id": 3,
+      "name": "Ankara Airport"
+    },
+    {
+      "id": 4,
+      "name": "Izmir Airport"
+    },
+    {
+      "id": 5,
+      "name": "Muş Airport"
+    },
+    {
+      "id": 6,
+      "name": "Muğla Airport"
+    },
+    {
+      "id": 7,
+      "name": "Bursa Airport"
+    }
+  ]
+}
