@@ -6,4 +6,13 @@
   &__dropdown {
     width: 9rem;
   }
+
+  &__button__continue {
+    background-color: $crimson;
+    border: none;
+    &:hover {
+      background-color: $thunderBird;
+      cursor: pointer;
+    }
+  }
 }

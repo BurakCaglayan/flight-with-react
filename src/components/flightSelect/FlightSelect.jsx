@@ -1,6 +1,8 @@
 import Dropdown from "../UI/Dropdown";
 import DatePicker from "../UI/DatePicker";
 import PassengersCount from "../passengersCount/PassengersCount";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const FlightSelect = () => {
   const options = [
@@ -26,7 +28,9 @@ const FlightSelect = () => {
       />
       <DatePicker />
       <PassengersCount />
-      <div>Button</div>
+      <button className="flight-select__button__continue">
+        <FontAwesomeIcon icon={faChevronRight} />
+      </button>
     </div>
   );
 };
