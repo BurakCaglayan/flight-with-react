@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-const Dropdown = ({ options, hasLabel, labelText }) => {
+const Dropdown = ({ options, labelText }) => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [isLabelTop, setIsLabelTop] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -40,7 +40,7 @@ const Dropdown = ({ options, hasLabel, labelText }) => {
   return (
     <div className="dropdown">
       <div className="dropdown__wrapper">
-        {hasLabel && (
+        {labelText?.length > 0 && (
           <label className={isLabelTop && "label-top"}>{labelText}</label>
         )}
         <input
@@ -68,7 +68,6 @@ const Dropdown = ({ options, hasLabel, labelText }) => {
 
 Dropdown.propTypes = {
   options: PropTypes.arrayOf().isRequired,
-  hasLabel: PropTypes.bool,
   labelText: PropTypes.string,
 };
 
