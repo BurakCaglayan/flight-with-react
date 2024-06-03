@@ -29,8 +29,23 @@
 
   &__body {
     background-color: $alabaster;
+    // background-color: $iron;
     border: 1px solid $ebony_clay;
     border-radius: 0 0 0.2rem 0.2rem;
     padding: 0.5rem;
+
+    &__item {
+      display: flex;
+      gap: 0.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &__item-info {
+      width: 50%;
+    }
+
+    &__item-select {
+      width: 25%;
+    }
   }
 }
