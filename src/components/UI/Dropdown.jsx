@@ -2,11 +2,11 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { searchFilter } from "../../utils/common";
 
-const Dropdown = ({ options, labelText, searchBy, className }) => {
+const Dropdown = ({ options, labelText, searchBy, className, dropRef }) => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [isLabelTop, setIsLabelTop] = useState(false);
   const [searchValue, setSearchValue] = useState("");
-  const [selectedItem, setSelectedItem] = useState({});
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const onChange = (e) => {
     const tempValue = e.target.value;
@@ -34,7 +34,12 @@ const Dropdown = ({ options, labelText, searchBy, className }) => {
     }
   };
 
+  const waitBlur = () => {
+    setTimeout(onBlur, 150);
+  };
+
   const handleClick = (item) => {
+    setSearchValue(item[searchBy].name);
     setSelectedItem(item);
   };
 
@@ -51,7 +56,7 @@ const Dropdown = ({ options, labelText, searchBy, className }) => {
           value={searchValue}
           onChange={onChange}
           onFocus={onFocus}
-          onBlur={onBlur}
+          onBlur={waitBlur}
         />
       </div>
       {isMenuVisible && (
@@ -61,9 +66,9 @@ const Dropdown = ({ options, labelText, searchBy, className }) => {
               searchValue,
               list: options,
               searchBy,
-            })?.map((item) => (
-              <li key={item.id} onClick={() => handleClick(item)}>
-                {item.name}
+            })?.map((item, index) => (
+              <li key={index} onClick={() => handleClick(item)}>
+                {item[searchBy].name}
               </li>
             ))}
           </ul>
