@@ -1,7 +1,8 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { searchFilter } from "../../utils/common";
 
-const Dropdown = ({ options, labelText }) => {
+const Dropdown = ({ options, labelText, searchBy }) => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [isLabelTop, setIsLabelTop] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -41,7 +42,9 @@ const Dropdown = ({ options, labelText }) => {
     <div className="dropdown">
       <div className="dropdown__wrapper">
         {labelText?.length > 0 && (
-          <label className={isLabelTop && "label-top"}>{labelText}</label>
+          <label className={isLabelTop ? "label-top" : undefined}>
+            {labelText}
+          </label>
         )}
         <input
           type="text"
@@ -54,7 +57,11 @@ const Dropdown = ({ options, labelText }) => {
       {isMenuVisible && (
         <div className="dropdown__menu">
           <ul>
-            {options?.map((item) => (
+            {searchFilter({
+              searchValue,
+              list: options,
+              searchBy,
+            })?.map((item) => (
               <li key={item.id} onClick={() => handleClick(item)}>
                 {item.name}
               </li>
@@ -69,6 +76,7 @@ const Dropdown = ({ options, labelText }) => {
 Dropdown.propTypes = {
   options: PropTypes.arrayOf().isRequired,
   labelText: PropTypes.string,
+  searchBy: PropTypes.string,
 };
 
 export default Dropdown;
