@@ -6,7 +6,6 @@ const Dropdown = ({ options, labelText, searchBy, className, type }) => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [isLabelTop, setIsLabelTop] = useState(false);
   const [searchValue, setSearchValue] = useState("");
-  const [selectedItem, setSelectedItem] = useState(null);
 
   const onChange = (e) => {
     const tempValue = e.target.value;
@@ -40,7 +39,6 @@ const Dropdown = ({ options, labelText, searchBy, className, type }) => {
 
   const handleClick = (item) => {
     setSearchValue(item[searchBy]);
-    setSelectedItem(item);
     localStorage.setItem(type, JSON.stringify(item));
   };
 

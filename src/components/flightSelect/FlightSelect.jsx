@@ -6,7 +6,6 @@ import PassengersCount from "../passengersCount/PassengersCount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import {
-  getFlights,
   getAirports,
   setSelectedFligtToLocalStorage,
 } from "../../utils/common";
@@ -14,7 +13,6 @@ import {
 const FlightSelect = () => {
   const [hasError, setHasError] = useState(false);
   const navigate = useNavigate();
-  const flights = getFlights();
   const options = getAirports();
 
   const handleContinueClick = () => {
