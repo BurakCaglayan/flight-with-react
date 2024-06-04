@@ -40,6 +40,11 @@ export const sortFlights = () =>
       b.fareCategories.ECONOMY.subcategories[0].price.amount
   );
 
+export const sortFlightsByDepartureTime = () =>
+  getSelectedFligtFromLocalStorage()?.sort(
+    (a, b) => a.departureDateTimeDisplay - b.departureDateTimeDisplay
+  );
+
 export const getFlyPrice = (flight, selector) =>
   flight.fareCategories[selector].subcategories[0].price;
 

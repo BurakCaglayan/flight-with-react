@@ -3,14 +3,13 @@ import Card from "../../../components/UI/Card";
 import FlightClassSelect from "./FlightClassSelect";
 import FlightInfo from "./FlightInfo";
 import FlightSelectCard from "./FlightSelectCard";
-import { sortFlights } from "../../../utils/common";
+import { sortFlights, sortFlightsByDepartureTime } from "../../../utils/common";
 
 const FlightsList = ({ isToggle }) => {
   const [selectedFlightClass, setSelectedFlightClass] = useState();
   const [selectedFlightName, setSelectedFlightName] = useState();
   const [selectedFlight, setSelectedFlight] = useState();
-
-  const selectedFlights = sortFlights();
+  const [selectedFlights, setSelectedFlights] = useState(sortFlights());
 
   const onChangeRadioValue = (e, item) => {
     setSelectedFlightClass(e.target.value);
@@ -18,12 +17,30 @@ const FlightsList = ({ isToggle }) => {
     setSelectedFlight(item);
   };
 
+  const handleSortByTimeClick = () => {
+    setSelectedFlights(sortFlightsByDepartureTime());
+  };
+
+  const handleSortByEcoAmountClick = () => {
+    setSelectedFlights(sortFlights());
+  };
+
   return (
     <div className="flightsList">
       <div className="flightsList__header">
         <div className="flightsList__header__label">Sıralama Kriteri</div>
-        <button className="flightsList__header__button">Ekonomi Ücreti</button>
-        <button className="flightsList__header__button">Kalkış Saati</button>
+        <button
+          className="flightsList__header__button"
+          onClick={handleSortByEcoAmountClick}
+        >
+          Ekonomi Ücreti
+        </button>
+        <button
+          className="flightsList__header__button"
+          onClick={handleSortByTimeClick}
+        >
+          Kalkış Saati
+        </button>
       </div>
       <div className="flightsList__body">
         {selectedFlights.map((flight, index) => (
