@@ -5,6 +5,9 @@ const FlightSelectCard = ({ className, item, isToggle }) => {
   const amount =
     isToggle && brandCode === "ecoFly" ? price.amount / 2 : price.amount;
 
+  const handleFlightSelectClick = () => {
+    localStorage.setItem("amount", amount);
+  };
   return (
     <div className={`flight-select-card ${className}`}>
       <div className="flight-select-card__header">
@@ -27,6 +30,7 @@ const FlightSelectCard = ({ className, item, isToggle }) => {
       <div className="flight-select-card__footer">
         <button
           className={"flight-select-card__button"}
+          onClick={() => handleFlightSelectClick}
           disabled={isToggle && brandCode !== "ecoFly"}
         >
           Uçuşu Seç
