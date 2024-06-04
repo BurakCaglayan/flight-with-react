@@ -22,6 +22,11 @@
       color: $malachite;
       font-size: 2rem;
     }
+
+    &__error-icon {
+      color: $crimson;
+      font-size: 2rem;
+    }
   }
 
   &__footer {
@@ -30,6 +35,18 @@
     justify-content: space-between;
     padding: 1rem 0 1rem 0;
     font-size: 1.5rem;
+
+    &-error {
+      text-align: right;
+
+      &__button {
+        border: none;
+        background-color: $crimson;
+        color: $alabaster;
+        font-weight: $font_weight_semi_bold;
+        padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+      }
+    }
 
     &__amount {
       display: flex;
