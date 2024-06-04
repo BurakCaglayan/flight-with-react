@@ -39,3 +39,6 @@ export const sortFlights = () =>
       a.fareCategories.ECONOMY.subcategories[0].price.amount -
       b.fareCategories.ECONOMY.subcategories[0].price.amount
   );
+
+export const getFlyPrice = (flight, selector) =>
+  flight.fareCategories[selector].subcategories[0].price;

@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import RadioButton from "../../../components/UI/RadioButton";
+import { getFlyPrice } from "../../../utils/common";
 
 const FlightClassSelect = ({
   value,
@@ -10,6 +11,7 @@ const FlightClassSelect = ({
   onChangeRadioValue,
   item,
 }) => {
+  const { amount, currency } = getFlyPrice(item, value);
   return (
     <div className="flight-class">
       <div className="flight-class__info">
@@ -25,7 +27,7 @@ const FlightClassSelect = ({
         </div>
         <div>
           <div>Yolcu başına</div>
-          <div>TRY 200</div>
+          <div>{`${currency} ${amount}`}</div>
         </div>
       </div>
       <div>
