@@ -1,5 +1,6 @@
 import FlightsList from "./components/FlightsList";
 import Header from "../../components/header/Header";
+import ToggleButton from "../../components/UI/ToggleButton";
 
 const Flights = () => {
   const { originAirport, destinationAirport } = JSON.parse(
@@ -20,7 +21,9 @@ const Flights = () => {
         `}</div>
         <div className="flights__promo">
           <small className="flights__promo__title">Promosyon kodu</small>
-          <div>Switch button</div>
+          <div>
+            <ToggleButton />
+          </div>
         </div>
         <div>
           <FlightsList />

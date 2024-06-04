@@ -1,0 +1,41 @@
+.toggle-slider {
+  position: relative;
+  width: 2.5rem;
+  height: 1.5rem;
+
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $silver_sand;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1rem;
+    width: 1rem;
+    left: 0.25rem;
+    bottom: 0.25rem;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"]:checked + .slider {
+    background-color: $royal_blue;
+  }
+
+  input[type="checkbox"]:checked + .slider:before {
+    transform: translateX(1rem);
+  }
+}
