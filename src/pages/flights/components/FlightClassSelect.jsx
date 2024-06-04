@@ -8,8 +8,8 @@ const FlightClassSelect = ({
   label,
   checked,
   onChangeRadioValue,
+  item,
 }) => {
-
   return (
     <div className="flight-class">
       <div className="flight-class__info">
@@ -20,6 +20,7 @@ const FlightClassSelect = ({
             checked={checked}
             onChangeValue={onChangeRadioValue}
             label={label}
+            item={item}
           />
         </div>
         <div>
