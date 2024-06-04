@@ -7,6 +7,7 @@ const RadioButton = ({
   checked,
   label,
   onChangeValue,
+  item,
 }) => (
   <div className={className}>
     <input
@@ -14,7 +15,7 @@ const RadioButton = ({
       value={value}
       name={name}
       checked={checked}
-      onChange={onChangeValue}
+      onChange={(e) => onChangeValue(e, item)}
     />
     {label}
   </div>
