@@ -47,5 +47,11 @@
     &__item-select {
       width: 25%;
     }
+
+    &__select-card{
+      display: flex;
+      gap: 0.3rem;
+    }
   }
+
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Card from "../../../components/UI/Card";
 import FlightClassSelect from "./FlightClassSelect";
 import FlightInfo from "./FlightInfo";
+import FlightSelectCard from "./FlightSelectCard";
 
 const FlightsList = () => {
   const [selectedFlightClass, setSelectedFlightClass] = useState();
@@ -41,6 +42,23 @@ const FlightsList = () => {
             />
           </Card>
         </div>
+        <Card className={"flightsList__body__select-card"}>
+          <FlightSelectCard
+            title={"Eco Fly"}
+            price={"130"}
+            item={"15kg bagaj"}
+          />
+          <FlightSelectCard
+            title={"Eco Fly"}
+            price={"130"}
+            item={"15kg bagaj"}
+          />
+          <FlightSelectCard
+            title={"Eco Fly"}
+            price={"130"}
+            item={"15kg bagaj"}
+          />
+        </Card>
       </div>
     </div>
   );
