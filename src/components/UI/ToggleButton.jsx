@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-const ToggleButton = () => {
+const ToggleButton = ({ setIsToggle }) => {
   const [checked, setChecked] = useState(false);
 
   const handleToggle = () => {
     setChecked(!checked);
+    setIsToggle(!checked);
   };
 
   return (

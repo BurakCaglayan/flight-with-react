@@ -5,7 +5,7 @@ import FlightInfo from "./FlightInfo";
 import FlightSelectCard from "./FlightSelectCard";
 import { sortFlights } from "../../../utils/common";
 
-const FlightsList = () => {
+const FlightsList = ({ isToggle }) => {
   const [selectedFlightClass, setSelectedFlightClass] = useState();
   const [selectedFlightName, setSelectedFlightName] = useState();
   const [selectedFlight, setSelectedFlight] = useState();
@@ -67,7 +67,11 @@ const FlightsList = () => {
                 <>
                   {flight.fareCategories[selectedFlightClass].subcategories.map(
                     (item, index) => (
-                      <FlightSelectCard key={`list_${index}`} item={item} />
+                      <FlightSelectCard
+                        key={`list_${index}`}
+                        item={item}
+                        isToggle={isToggle}
+                      />
                     )
                   )}
                 </>

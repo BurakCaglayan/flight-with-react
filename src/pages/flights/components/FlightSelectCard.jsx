@@ -1,15 +1,17 @@
 import PropTypes from "prop-types";
-import Card from "../../../components/UI/Card";
 
-const FlightSelectCard = ({ className, item }) => {
+const FlightSelectCard = ({ className, item, isToggle }) => {
   const { brandCode, price, rights } = item;
+  const amount =
+    isToggle && brandCode === "ecoFly" ? price.amount / 2 : price.amount;
+
   return (
     <div className={`flight-select-card ${className}`}>
       <div className="flight-select-card__header">
         <div className="flight-select-card__header__tittle">{brandCode}</div>
         <div className="flight-select-card__price">
           <div>{price.currency}</div>
-          <div>{price.amount}</div>
+          <div>{amount}</div>
         </div>
       </div>
       <div className="flight-select-card__body">
@@ -23,7 +25,12 @@ const FlightSelectCard = ({ className, item }) => {
         ))}
       </div>
       <div className="flight-select-card__footer">
-        <button className="flight-select-card__button">Uçuşu Seç</button>
+        <button
+          className={"flight-select-card__button"}
+          disabled={isToggle && brandCode !== "ecoFly"}
+        >
+          Uçuşu Seç
+        </button>
       </div>
     </div>
   );
@@ -32,6 +39,7 @@ const FlightSelectCard = ({ className, item }) => {
 FlightSelectCard.propTypes = {
   className: PropTypes.string,
   item: PropTypes.shape({}),
+  isToggle: PropTypes.bool,
 };
 
 export default FlightSelectCard;
