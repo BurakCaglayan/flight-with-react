@@ -25,8 +25,8 @@
                   "name": "Turkey"
               }
           },
-          "arrivalDateTimeDisplay": "01:15",
-          "departureDateTimeDisplay": "02:45",
+          "arrivalDateTimeDisplay": "02:45",
+          "departureDateTimeDisplay": "01:15",
           "flightDuration": "1s 30d",
           "fareCategories": {
               "BUSINESS": {
@@ -145,8 +145,8 @@
                   "name": "Turkey"
               }
           },
-          "arrivalDateTimeDisplay": "09:50",
-          "departureDateTimeDisplay": "11:20",
+          "arrivalDateTimeDisplay": "11:20",
+          "departureDateTimeDisplay": "09:50",
           "flightDuration": "1s 30d",
           "fareCategories": {
               "BUSINESS": {
@@ -265,8 +265,8 @@
                   "name": "Turkey"
               }
           },
-          "arrivalDateTimeDisplay": "11:25",
-          "departureDateTimeDisplay": "12:55",
+          "arrivalDateTimeDisplay": "12:55",
+          "departureDateTimeDisplay": "11:25",
           "flightDuration": "1s 30d",
           "fareCategories": {
               "BUSINESS": {
@@ -385,8 +385,8 @@
                   "name": "Turkey"
               }
           },
-          "arrivalDateTimeDisplay": "18:20",
-          "departureDateTimeDisplay": "19:50",
+          "arrivalDateTimeDisplay": "19:50",
+          "departureDateTimeDisplay": "18:20",
           "flightDuration": "1s 30d",
           "fareCategories": {
               "BUSINESS": {
