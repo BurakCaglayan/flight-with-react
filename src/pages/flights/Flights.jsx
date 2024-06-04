@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import FlightsList from "./components/FlightsList";
 import Header from "../../components/header/Header";
 import ToggleButton from "../../components/UI/ToggleButton";
+import { removeSelectedAirportsFromStorage } from "../../utils/common";
 
 const Flights = () => {
   const [isToggle, setIsToggle] = useState(false);
@@ -11,6 +12,8 @@ const Flights = () => {
   const passengersSelections = JSON.parse(
     localStorage.getItem("passengersSelections")
   );
+
+  removeSelectedAirportsFromStorage();
 
   const originCityName = originAirport.city.name;
   const destinationCityName = destinationAirport.city.name;

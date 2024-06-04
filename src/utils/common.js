@@ -18,7 +18,7 @@ export const findSelectedFlights = () => {
   const destinationAirport = JSON.parse(
     localStorage.getItem("destinationAirport")
   );
-  return getFlights().filter(
+  return getFlights()?.filter(
     (flight) =>
       flight.originAirport.name === originAirport.name &&
       flight.destinationAirport.name === destinationAirport.name
@@ -34,7 +34,7 @@ export const getSelectedFligtFromLocalStorage = () =>
   JSON.parse(localStorage.getItem("selectedFlights"));
 
 export const sortFlights = () =>
-  getSelectedFligtFromLocalStorage().sort(
+  getSelectedFligtFromLocalStorage()?.sort(
     (a, b) =>
       a.fareCategories.ECONOMY.subcategories[0].price.amount -
       b.fareCategories.ECONOMY.subcategories[0].price.amount
@@ -42,3 +42,8 @@ export const sortFlights = () =>
 
 export const getFlyPrice = (flight, selector) =>
   flight.fareCategories[selector].subcategories[0].price;
+
+export const removeSelectedAirportsFromStorage = () => {
+  localStorage.removeItem("originAirport");
+  localStorage.removeItem("destinationAirport");
+};
