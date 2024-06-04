@@ -1,8 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleCheck,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import Header from "../../components/header/Header";
 
 const Result = () => {
+  const navigate = useNavigate();
   const finalPrice = JSON.parse(localStorage.getItem("finalPrice"));
   const { count } = JSON.parse(localStorage.getItem("passengersSelections"));
   const errorStatus = localStorage.getItem("errorStatus");
@@ -33,14 +38,19 @@ const Result = () => {
           <>
             <div className="result__body">
               <FontAwesomeIcon
-                icon={faCircleCheck}
+                icon={faCircleXmark}
                 className="result__body__error-icon"
               />
               <div>Kabin seçiminiz tamamlanamadı.</div>
             </div>
             <hr />
             <div className="result__footer-error">
-              <button className="result__footer-error__button">Başa Dön</button>
+              <button
+                onClick={() => navigate("/")}
+                className="result__footer-error__button"
+              >
+                Başa Dön
+              </button>
             </div>
           </>
         )}
