@@ -30,5 +30,10 @@
     color: $alabaster;
     font-weight: $font_weight_semi_bold;
     padding: 0.75rem 0 0.75rem 0;
+    cursor: pointer;
+    &:disabled {
+      background-color: $iron;
+      cursor: unset;
+    }
   }
 }
