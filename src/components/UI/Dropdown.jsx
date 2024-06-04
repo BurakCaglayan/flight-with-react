@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { searchFilter } from "../../utils/common";
 
-const Dropdown = ({ options, labelText, searchBy, className, type }) => {
+const Dropdown = ({ options, labelText, searchBy, className, type, icon }) => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [isLabelTop, setIsLabelTop] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -50,6 +50,7 @@ const Dropdown = ({ options, labelText, searchBy, className, type }) => {
             {labelText}
           </label>
         )}
+        <div className="dropdown__wrapper__icon">{icon}</div>
         <input
           type="text"
           value={searchValue}
@@ -82,6 +83,7 @@ Dropdown.propTypes = {
   labelText: PropTypes.string,
   searchBy: PropTypes.string,
   className: PropTypes.string,
+  icon: PropTypes.node,
 };
 
 export default Dropdown;

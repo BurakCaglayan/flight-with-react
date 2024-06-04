@@ -4,7 +4,11 @@ import Dropdown from "../UI/Dropdown";
 import DatePicker from "../UI/DatePicker";
 import PassengersCount from "../passengersCount/PassengersCount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronRight,
+  faPlaneDeparture,
+  faPlaneArrival,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   getAirports,
   setSelectedFligtToLocalStorage,
@@ -42,6 +46,7 @@ const FlightSelect = () => {
           searchBy={"name"}
           className={"flight-select__dropdown"}
           type={"originAirport"}
+          icon={<FontAwesomeIcon icon={faPlaneDeparture} />}
         />
         <Dropdown
           labelText={"Nereye"}
@@ -49,6 +54,7 @@ const FlightSelect = () => {
           searchBy={"name"}
           className={"flight-select__dropdown"}
           type={"destinationAirport"}
+          icon={<FontAwesomeIcon icon={faPlaneArrival} />}
         />
         <DatePicker />
         <PassengersCount />
