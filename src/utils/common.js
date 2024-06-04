@@ -29,3 +29,13 @@ export const setSelectedFligtToLocalStorage = () => {
   const selectedFlights = findSelectedFlights();
   localStorage.setItem("selectedFlights", JSON.stringify(selectedFlights));
 };
+
+export const getSelectedFligtFromLocalStorage = () =>
+  JSON.parse(localStorage.getItem("selectedFlights"));
+
+export const sortFlights = () =>
+  getSelectedFligtFromLocalStorage().sort(
+    (a, b) =>
+      a.fareCategories.ECONOMY.subcategories[0].price.amount -
+      b.fareCategories.ECONOMY.subcategories[0].price.amount
+  );

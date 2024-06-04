@@ -3,13 +3,14 @@ import Card from "../../../components/UI/Card";
 import FlightClassSelect from "./FlightClassSelect";
 import FlightInfo from "./FlightInfo";
 import FlightSelectCard from "./FlightSelectCard";
+import { sortFlights } from "../../../utils/common";
 
 const FlightsList = () => {
   const [selectedFlightClass, setSelectedFlightClass] = useState();
   const [selectedFlightName, setSelectedFlightName] = useState();
   const [selectedFlight, setSelectedFlight] = useState();
 
-  const selectedFlights = JSON.parse(localStorage.getItem("selectedFlights"));
+  const selectedFlights = sortFlights();
 
   const onChangeRadioValue = (e, item) => {
     setSelectedFlightClass(e.target.value);
@@ -58,17 +59,20 @@ const FlightsList = () => {
                 />
               </Card>
             </div>
-            <Card className={"flightsList__body__select-card"}>
-              {((selectedFlightClass === "BUSINESS" &&
-                selectedFlightName === `radioClassSelect_${index}`) ||
-                (selectedFlightClass === "ECONOMY" &&
-                  selectedFlightName === `radioClassSelect_${index}`)) &&
-                flight.fareCategories[selectedFlightClass].subcategories.map(
-                  (item, index) => (
-                    <FlightSelectCard key={`list_${index}`} item={item} />
-                  )
-                )}
-            </Card>
+            {((selectedFlightClass === "BUSINESS" &&
+              selectedFlightName === `radioClassSelect_${index}`) ||
+              (selectedFlightClass === "ECONOMY" &&
+                selectedFlightName === `radioClassSelect_${index}`)) && (
+              <Card className={"flightsList__body__select-card"}>
+                <>
+                  {flight.fareCategories[selectedFlightClass].subcategories.map(
+                    (item, index) => (
+                      <FlightSelectCard key={`list_${index}`} item={item} />
+                    )
+                  )}
+                </>
+              </Card>
+            )}
           </div>
         ))}
       </div>
