@@ -5,4 +5,36 @@
   flex-direction: column;
   align-items: center;
   padding: $main_page_padding;
+
+  &__container {
+    min-width: 45rem;
+    margin: 1rem 0;
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0 1rem 0;
+    font-weight: $font_weight_bold;
+    gap: 1rem;
+
+    &__success-icon {
+      color: $malachite;
+      font-size: 2rem;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 0 1rem 0;
+    font-size: 1.5rem;
+
+    &__amount {
+      display: flex;
+      gap: 1rem;
+      color: $royal_blue;
+    }
+  }
 }
