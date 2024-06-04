@@ -25,7 +25,13 @@ const FlightSelect = () => {
     } else {
       setHasError(false);
       setSelectedFligtToLocalStorage();
-      navigate("/flights");
+      if (JSON.parse(localStorage.getItem("selectedFlights")).length === 0) {
+        localStorage.setItem("errorStatus", "error");
+        navigate("/result");
+      } else {
+        localStorage.removeItem("errorStatus");
+        navigate("/flights");
+      }
     }
   };
 
